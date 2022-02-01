@@ -1,9 +1,11 @@
-package com.example.jetpackproject
+package com.example.jetpackproject.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import com.example.jetpackproject.R
+import com.example.jetpackproject.model.NftData
 
 class NftAdapter : ListAdapter<NftData, NftViewHolder>(ASYNC_DIFF) {
 
