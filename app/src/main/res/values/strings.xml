@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">jetpackproject</string>
+    <string name="enter_something">Enter something</string>
+    <string name="wallet_id_error">please input an id</string>
+    <string name="search">search</string>
 </resources>
