@@ -5,17 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.jetpackproject.R
-import com.example.jetpackproject.model.NftData
 
-class NftAdapter : ListAdapter<NftData, NftViewHolder>(ASYNC_DIFF) {
+class NftAdapter : ListAdapter<String, NftViewHolder>(ASYNC_DIFF) {
 
     companion object {
-        private val ASYNC_DIFF = object : DiffUtil.ItemCallback<NftData>() {
-            override fun areItemsTheSame(oldItem: NftData, newItem: NftData): Boolean {
+        private val ASYNC_DIFF = object : DiffUtil.ItemCallback<String>() {
+            override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
                 return oldItem == newItem
             }
 
-            override fun areContentsTheSame(oldItem: NftData, newItem: NftData): Boolean {
+            override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
                 return oldItem == newItem
             }
 
