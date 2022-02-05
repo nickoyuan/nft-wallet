@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.jetpackproject.R
 import com.example.jetpackproject.model.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -30,9 +31,16 @@ class StakePoolViewModel @Inject constructor(private val nftRepository: NftRepos
             walletIdErrorLiveData.postValue(R.string.wallet_id_error)
         } else {
             viewModelScope.launch {
-                nftRepository.getNftDataFromWallet(walletId.id).collect {
+                _screenState.postValue(ViewState.loading())
+                nftRepository.getNftDataFromWallet(walletId.id).catch {
+                    _screenState.postValue(ViewState.error())
+                }.collect {
                     if (it?.onChainMetaData?.image != null) {
-                        val ipfsUrl = it.onChainMetaData!!.image!!.replace("ipfs://", "https://ipfs.io/ipfs/")
+                        val ipfsUrl =
+                            it.onChainMetaData!!.image!!.replace(
+                                "ipfs://",
+                                "https://ipfs.io/ipfs/"
+                            )
                         _screenState.postValue(ViewState.success((ipfsUrl)))
                     }
                 }
