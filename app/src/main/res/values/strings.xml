@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">jetpackproject</string>
+    <string name="app_name">Nft searcher</string>
     <string name="enter_something">Wallet stake address</string>
-    <string name="wallet_id_error">please input an id</string>
+    <string name="wallet_id_error">please input valid stake address</string>
     <string name="search">search</string>
     <string name="error_msg">Could not find wallet stake id</string>
 </resources>
