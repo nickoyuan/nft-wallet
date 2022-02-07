@@ -7,11 +7,10 @@ import javax.inject.Inject
 
 class NftRepository @Inject constructor(private val apiProvider: ApiProvider) {
     fun getNftDataFromWallet(id: String) = flow {
-            apiProvider.getNftUnits(id)
-                .map {
-                    val ipfsUrl = apiProvider.getIpfsUrl(it.nftUnit)
-                    emit(ipfsUrl)
-                }
-        }.flowOn(Dispatchers.IO)
-
+        apiProvider.getNftUnits(id)
+            .map {
+                val ipfsUrl = apiProvider.getIpfsUrl(it.nftUnit)
+                emit(ipfsUrl)
+            }
+    }.flowOn(Dispatchers.IO)
 }

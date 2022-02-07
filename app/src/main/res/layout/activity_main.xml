@@ -29,6 +29,7 @@
             android:paddingStart="5dp"
             android:paddingEnd="0dp"
             android:singleLine="true"
+            android:drawableStart="@drawable/ic_icons8_search"
             android:text="@={viewModel.walletId.id}"
             android:textColor="@color/black"
             android:textSize="16sp"
