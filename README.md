@@ -1,4 +1,4 @@
-## NFT wallet 
+## Cardano Blockchain | NFT wallet 
 
 
 ## About
