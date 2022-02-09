@@ -1,5 +1,6 @@
-## Cardano Blockchain | NFT wallet 
+![nft wallet](https://media.giphy.com/media/PLjSAUOZy5XaRRF8Nr/giphy.gif)
 
+## Cardano Blockchain | NFT wallet 
 
 ## About
 This Android project contains example of how to query BlockFrost.io API to show all nfts that are stored in your Cardano wallet by querying the blockchain. 
